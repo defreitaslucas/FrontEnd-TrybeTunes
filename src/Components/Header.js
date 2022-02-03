@@ -1,36 +1,31 @@
 import React, { Component } from 'react';
 import { getUser } from '../services/userAPI';
-import Carregando from './Carregando';
+// import Carregando from './Carregando';
 
 export default class Header extends Component {
   constructor() {
     super();
     this.state = {
       user: '',
-      isLoading: true,
+      // isLoading: false,
     };
   }
 
   handleGetUser = async () => {
-    await getUser();
-    this.setState({ user: result, isLoading: false });
+    const { user } = this.state;
+    const result = await getUser();
+    console.log(result);
+    this.setState({ user: result });
+    return user;
   }
 
   render() {
-    const { user, isLoading } = this.state;
+    const { user } = this.state;
     return (
       <header data-testid="header-component">
         <p data-testid="header-user-name">
-          {this.handleGetUser}
           {user}
         </p>
-        {
-          isLoading ? <Carregando /> : (
-            <h1>
-              Trybe Tunes
-            </h1>
-          )
-        }
       </header>
     );
   }
