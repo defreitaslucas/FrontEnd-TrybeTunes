@@ -24,6 +24,7 @@ class Album extends Component {
       albuns: result,
       trackList: result.slice(1),
     });
+    this.updateFavoriteSongs();
   }
 
   checkedFavoriteSongs = ({ target }) => {
@@ -40,8 +41,8 @@ class Album extends Component {
   }
 
   updateFavoriteSongs = async () => {
-    const favoriteSongs = await getFavoriteSongs();
-    this.setState({ favoriteSongs, isLoading: false });
+    const array = await getFavoriteSongs();
+    this.setState({ favoriteSongs: array, isLoading: false });
   }
 
   render() {
