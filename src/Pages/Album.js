@@ -27,16 +27,16 @@ class Album extends Component {
     this.updateFavoriteSongs();
   }
 
-  checkedFavoriteSongs = ({ target }) => {
+  checkedFavoriteSongs = async ({ target }) => {
     const { trackList } = this.state;
     this.setState({ isLoading: true });
     if (target.checked) {
-      addSong(trackList.find((track) => track.trackId === Number(target.id)))
-        .then(() => this.updateFavoriteSongs());
+      await addSong(trackList.find((track) => track.trackId === Number(target.id)));
+      this.updateFavoriteSongs();
     }
     if (!target.checked) {
-      removeSong(trackList.find((track) => track.trackId === Number(target.id)))
-        .then(() => this.updateFavoriteSongs());
+      await removeSong(trackList.find((track) => track.trackId === Number(target.id)));
+      this.updateFavoriteSongs();
     }
   }
 
