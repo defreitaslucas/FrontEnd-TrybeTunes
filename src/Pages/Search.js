@@ -33,7 +33,6 @@ class Search extends React.Component {
     const { search } = this.state;
     this.setState({ isLoading: true, artistName: search }, async () => {
       const result = await searchAlbumsAPI(search);
-      console.log(result);
       this.setState({
         isLoading: false,
         albuns: result,
