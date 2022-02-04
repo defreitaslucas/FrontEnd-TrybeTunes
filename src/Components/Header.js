@@ -25,12 +25,14 @@ export default class Header extends Component {
         {
           isLoading ? <Carregando /> : (
             <>
-              <h1>
-                TrybeTunes
-              </h1>
-              <p data-testid="header-user-name" className="user">
-                { user }
-              </p>
+              <div className="titulo">
+                <h2>
+                  TrybeTunes
+                </h2>
+                <p data-testid="header-user-name">
+                  { user }
+                </p>
+              </div>
               <nav className="nav">
                 <Link to="/search" data-testid="link-to-search">Search</Link>
                 <Link to="/favorites" data-testid="link-to-favorites">Favorites</Link>

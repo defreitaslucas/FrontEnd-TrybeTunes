@@ -9,4 +9,11 @@
 
 .user {
   display: flex;
+  justify-content: flex-end;
+}
+
+.titulo {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
 }
