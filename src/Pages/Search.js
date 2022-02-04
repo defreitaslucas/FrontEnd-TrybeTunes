@@ -87,6 +87,7 @@ class Search extends React.Component {
                   </li>
                 ))}
               </ul>
+
             </>
           )
         }
