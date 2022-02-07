@@ -17,22 +17,31 @@ class Album extends Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.requestMusic();
+  }
+
+  requestMusic = async () => {
     const { match: { params: { id } } } = this.props;
+    this.setState({ isLoading: true });
     const result = await getMusics(id);
     this.setState({
       albuns: result,
       trackList: result.slice(1),
+      isLoading: false,
     });
     this.updateFavoriteSongs();
   }
 
   checkedFavoriteSongs = async ({ target }) => {
-    const { trackList } = this.state;
+    const { trackList, favoriteSongs } = this.state;
+    const musicChecked = (trackList.find((track) => track.trackId === Number(target.id)));
     this.setState({ isLoading: true });
+    console.log(musicChecked);
     if (target.checked) {
-      await addSong(trackList.find((track) => track.trackId === Number(target.id)));
-      this.updateFavoriteSongs();
+      await addSong(musicChecked);
+      this.setState({ isLoading: false,
+        favoriteSongs: [...favoriteSongs, musicChecked] });
     }
     if (!target.checked) {
       await removeSong(trackList.find((track) => track.trackId === Number(target.id)));
