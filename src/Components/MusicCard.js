@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import '../search.css';
 
 export default class MusicCard extends Component {
   render() {
     const { trackName, previewUrl, trackId,
       isChecked, checkedFavoriteSongs } = this.props;
     return (
-      <div>
-        {trackName}
+      <div className="div-musicCard">
+        <div>
+          {trackName}
+        </div>
         <audio data-testid="audio-component" src={ previewUrl } controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento

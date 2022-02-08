@@ -49,44 +49,53 @@ class Search extends React.Component {
         {
           isLoading ? <Carregando /> : (
             <>
-              <form className="form-input">
-                <label htmlFor="search-input">
-                  <input
-                    type="text"
-                    name="search-input"
-                    data-testid="search-artist-input"
-                    onChange={ this.onInputChangeSearch }
-                    placeholder="Digite nome do artista/banda"
-                    value={ search }
-                  />
-                </label>
-                <button
-                  type="button"
-                  data-testid="search-artist-button"
-                  disabled={ isButtonDisabled }
-                  onClick={ this.handleButtonClick }
-                >
-                  Pesquisar
-                </button>
-              </form>
-              <h2>
-                {albuns.length !== 0
-                  ? `Resultado de álbuns de: ${artistName}`
-                  : 'Nenhum álbum foi encontrado'}
-              </h2>
-              <ul>
-                {albuns.map((album) => (
-                  <li key={ album.collectionId }>
-                    <Link
-                      data-testid={ `link-to-album-${album.collectionId}` }
-                      to={ `/album/${album.collectionId}` }
-                    >
-                      { album.collectionName }
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-
+              <div>
+                <form className="form-search">
+                  <label htmlFor="search-input" className="input-search">
+                    <input
+                      type="text"
+                      name="search-input"
+                      data-testid="search-artist-input"
+                      onChange={ this.onInputChangeSearch }
+                      placeholder="Digite nome do artista/banda"
+                      value={ search }
+                    />
+                  </label>
+                  <button
+                    type="button"
+                    data-testid="search-artist-button"
+                    disabled={ isButtonDisabled }
+                    onClick={ this.handleButtonClick }
+                    className="buttonSearch"
+                  >
+                    Pesquisar
+                  </button>
+                </form>
+              </div>
+              <div>
+                <h2 className="resultado">
+                  {albuns.length !== 0
+                    ? `Resultado de álbuns de: ${artistName}`
+                    : 'Nenhum álbum foi encontrado'}
+                </h2>
+                <ul>
+                  {albuns.map((album) => (
+                    <li key={ album.collectionId } className="cards">
+                      <Link
+                        data-testid={ `link-to-album-${album.collectionId}` }
+                        to={ `/album/${album.collectionId}` }
+                      >
+                        <img
+                          src={ album.artworkUrl100 }
+                          alt={ album.collectionName }
+                          className="imagemalbum"
+                        />
+                        { album.collectionName }
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </>
           )
         }

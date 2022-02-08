@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getUser } from '../services/userAPI';
 import Carregando from './Carregando';
 import '../header.css';
+import trybetunes from '../imagens/trybetunes.png';
 
 export default class Header extends Component {
   constructor() {
@@ -21,22 +24,47 @@ export default class Header extends Component {
   render() {
     const { isLoading, user } = this.state;
     return (
-      <header data-testid="header-component" className="header">
+      <header data-testid="header-component" className="header bg-lime-300 rounded">
         {
           isLoading ? <Carregando /> : (
             <>
-              <div className="titulo">
-                <h2>
-                  TrybeTunes
-                </h2>
-                <p data-testid="header-user-name">
+              <img src={ trybetunes } alt="trybetunes" className="img" />
+              <div className="rectangle">
+                <div className="icon-user">
+                  <FontAwesomeIcon
+                    icon={ faUser }
+                    className="icone"
+                    size="xl"
+                    fixedWidth
+                    border
+                  />
+                </div>
+                <span data-testid="header-user-name" className="user">
                   { user }
-                </p>
+                </span>
               </div>
               <nav className="nav">
-                <Link to="/search" data-testid="link-to-search">Search</Link>
-                <Link to="/favorites" data-testid="link-to-favorites">Favorites</Link>
-                <Link to="/profile" data-testid="link-to-profile">Profile</Link>
+                <Link
+                  to="/search"
+                  data-testid="link-to-search"
+                >
+                  Search
+
+                </Link>
+                <Link
+                  to="/favorites"
+                  data-testid="link-to-favorites"
+                >
+                  Favorites
+
+                </Link>
+                <Link
+                  to="/profile"
+                  data-testid="link-to-profile"
+                >
+                  Profile
+
+                </Link>
               </nav>
             </>
           )

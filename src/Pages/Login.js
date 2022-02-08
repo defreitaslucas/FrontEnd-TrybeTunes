@@ -2,6 +2,8 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import Carregando from '../Components/Carregando';
 import { createUser } from '../services/userAPI';
+import '../login.css';
+import trybetunes from '../imagens/trybetunes.png';
 
 const TAMANHO = 3;
 class Login extends React.Component {
@@ -42,29 +44,34 @@ class Login extends React.Component {
       return <Redirect to="/search" />;
     }
     return (
-      <div data-testid="page-login">
+      <div data-testid="page-login" className="background">
         {
           isLoading ? <Carregando /> : (
-            <form>
-              <label htmlFor="login">
-                Login:
-                <input
-                  type="text"
-                  name="login"
-                  placeholder="Digite seu Nome"
-                  data-testid="login-name-input"
-                  onChange={ this.onInputChange }
-                />
-              </label>
-              <button
-                data-testid="login-submit-button"
-                type="button"
-                disabled={ isEnterButtonDisabled }
-                onClick={ this.handleButtonClick }
-              >
-                Entrar
-              </button>
-            </form>
+            <>
+              <img src={ trybetunes } alt="trybetunes" className="img-login" />
+              <div className="form-login">
+                <form>
+                  <label htmlFor="login" className="login-input">
+                    <input
+                      type="text"
+                      name="login"
+                      placeholder="Digite seu Nome"
+                      data-testid="login-name-input"
+                      onChange={ this.onInputChange }
+                    />
+                  </label>
+                  <button
+                    data-testid="login-submit-button"
+                    type="button"
+                    disabled={ isEnterButtonDisabled }
+                    onClick={ this.handleButtonClick }
+                    className="buttonLogin"
+                  >
+                    Entrar
+                  </button>
+                </form>
+              </div>
+            </>
           )
         }
       </div>

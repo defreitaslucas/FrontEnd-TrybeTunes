@@ -1,4 +1,102 @@
-.form-input {
-  margin-top: 100px;
-  text-align: center;
+.form-search {
+  align-items: flex-start;
+  background: white;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  height: 45px;
+  left: 380px;
+  padding: 12px 16px;
+  position: absolute;
+  top: 277px;
+  width: 519px;
+}
+
+.buttonSearch {
+  align-items: center;
+  background: #003be5;
+  border-radius: 2px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  height: 46px;
+  justify-content: center;
+  left: 405px;
+  padding: 8px 32px;
+  position: absolute;
+  top: 11px;
+  width: 134px;
+}
+
+.input-search {
+  height: 72px;
+  left: 22px;
+  top: 10px;
+  width: 513px;
+}
+
+.input-search input {
+  height: 39px;
+  width: 360px;
+}
+
+.cards {
+  background: white;
+  border: 1px solid #e1e5eb;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06) , 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  height: 320px;
+  left: 112px;
+  list-style: none;
+  padding: 0 0 16px;
+  top: 507px;
+  width: 290px;
+}
+
+.resultado {
+  color: #001813;
+  font-family: fantasy;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  height: 33px;
+  left: 112px;
+  line-height: 25px;
+  position: absolute;
+  top: 360px;
+  width: 100%;
+}
+
+.imagemalbum {
+  border-radius: 6px 6px 0 0;
+  height: 180px;
+  left: calc(50% - 290px / 2);
+  mix-blend-mode: normal;
+  top: calc(50% - 180px / 2 - 70px);
+  width: 290px;
+}
+
+ul {
+  align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-top: 418px;
+}
+
+ul li a {
+  align-items: center;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+
+ul li .div-musicCard {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 35px;
 }

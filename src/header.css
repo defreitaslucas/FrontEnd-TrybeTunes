@@ -1,19 +1,70 @@
 .header {
-  display: block;
+  background: #023031;
+  box-shadow: 0 4px 1px rgba(0, 0, 0, 0.25);
+  height: 96px;
+  left: 0;
+  position: absolute;
+  top: 4px;
+  width: 1440px;
+}
+
+.img {
+  background-color: #023031;
+  height: 96px;
+  left: 35px;
+  position: absolute;
+  top: 0;
+  width: 117px;
+}
+
+.rectangle {
+  align-items: center;
+  background: white;
+  border-radius: 50px;
+  box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+  display: flex;
+  height: 41.65px;
+  justify-content: center;
+  left: 1192px;
+  position: absolute;
+  top: 31px;
+  width: 198.7px;
+}
+
+.user {
+  align-items: center;
+  color: black;
+  display: flex;
+  font-family: Cambria , Cochin , Georgia , Times , Times New Roman , serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  height: 28.63px;
+  justify-content: center;
+  left: 1400px;
+  line-height: 18px;
+  top: 44.02px;
+  width: 100%;
 }
 
 .nav {
   display: flex;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  height: 78px;
   justify-content: space-around;
+  left: 1px;
+  position: absolute;
+  top: 100px;
+  width: 1439px;
 }
 
-.user {
-  display: flex;
-  justify-content: flex-end;
+.icone {
+  border-color: black;
+  border-radius: 50px;
+  padding: 7px;
 }
 
-.titulo {
-  align-items: baseline;
-  display: flex;
-  justify-content: space-between;
+.icon-user {
+  padding: 0;
+  width: 0;
 }
