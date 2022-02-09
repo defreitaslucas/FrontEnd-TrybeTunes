@@ -8,12 +8,12 @@ module.exports = {
       xl: '1440px',
     },
     colors: {
-      'blue': '#1fb6ff',
-      'pink': '#ff49db',
-      'orange': '#ff7849',
-      'green': '#13ce66',
+      blue: '#1fb6ff',
+      pink: '#ff49db',
+      orange: '#ff7849',
+      green: '#13ce66',
       'gray-dark': '#273444',
-      'gray': '#8492a6',
+      gray: '#8492a6',
       'gray-light': '#d3dce6',
     },
     fontFamily: {
@@ -22,8 +22,8 @@ module.exports = {
     },
     extend: {
       spacing: {
-        '128': '32rem',
-        '144': '36rem',
+        128: '32rem',
+        144: '36rem',
       },
       borderRadius: {
         '4xl': '2rem',
